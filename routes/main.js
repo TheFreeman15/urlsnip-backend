@@ -5,5 +5,7 @@ const MainController = require('../controllers/main')
 router.route('/')
     .get(MainController.index);
 
+router.route('/create')
+    .post(MainController.create);
 
 module.exports = router;    
