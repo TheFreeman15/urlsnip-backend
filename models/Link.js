@@ -5,7 +5,11 @@ const {Schema} = mongoose;
 const linkSchema = new Schema({
     slug: String,
     destination: String,
-    expiresin : Number, 
+    expireAt: {
+        type: Date,
+        default: Date.now,
+        createIndexes: { expires: '1m' },
+      },
  
 });
 

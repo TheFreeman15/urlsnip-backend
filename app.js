@@ -4,15 +4,15 @@ const mongoose = require('mongoose')
 const logger = require('morgan');
 const bodyParser = require('body-parser')
 const MainRoutes = require('./routes/main')
+// const expressValidator = require('express-validator')
 //Database Connection
 require('./config/db')();
 
 // MiddleWares
 app.use(logger('dev'))
 app.use(bodyParser.json());
-
 //Routes 
-app.use(MainRoutes)
+app.use('/links',MainRoutes)
 
 // Error Catching 
 app.use((req,res,next)=>{
